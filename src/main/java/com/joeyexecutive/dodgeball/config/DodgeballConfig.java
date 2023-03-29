@@ -1,6 +1,7 @@
 package com.joeyexecutive.dodgeball.config;
 
 import lombok.Getter;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
 import java.util.List;
@@ -16,9 +17,9 @@ public class DodgeballConfig {
                     "dodgeball",
                     "mongodb",
                     "Dodgeball",
-                    new Location(null, 0, 0, 0),
-                    List.of(new Location(null, 0, 0, 0)),
-                    List.of(new Location(null, 0, 0, 0))
+                    new Location(Bukkit.getWorld("world"), 0, 0, 0),
+                    List.of(new Location(Bukkit.getWorld("world"), 0, 0, 0)),
+                    List.of(new Location(Bukkit.getWorld("world"), 0, 0, 0))
             )
     );
 
