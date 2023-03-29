@@ -20,6 +20,8 @@
         <gson.version>2.10.1</gson.version>
 
         <slimewm.version>1.19.3-R0.1-SNAPSHOT</slimewm.version>
+
+        <protocollib.version>5.0.0-SNAPSHOT</protocollib.version>
     </properties>
 
     <repositories>
@@ -34,6 +36,10 @@
         <repository>
             <id>flow</id>
             <url>https://repo.rapture.pw/repository/maven-releases/</url>
+        </repository>
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>https://repo.dmulloy2.net/repository/public/</url>
         </repository>
     </repositories>
 
@@ -50,6 +56,13 @@
             <version>${spigot.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- spigot -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>${spigot.version}</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -60,6 +73,11 @@
             <artifactId>api</artifactId>
             <version>${slimewm.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.comphenix.protocol</groupId>
+            <artifactId>ProtocolLib</artifactId>
+            <version>${protocollib.version}</version>
         </dependency>
     </dependencies>
 
