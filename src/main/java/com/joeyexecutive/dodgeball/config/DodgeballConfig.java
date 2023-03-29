@@ -6,6 +6,9 @@ import org.bukkit.Location;
 
 import java.util.List;
 
+/**
+ * Gson config object that is automatically serialized and deserialized
+ */
 @Getter
 public class DodgeballConfig {
 

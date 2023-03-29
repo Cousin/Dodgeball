@@ -2,15 +2,20 @@ package com.joeyexecutive.dodgeball;
 
 import com.infernalsuite.aswm.api.SlimePlugin;
 import com.joeyexecutive.dodgeball.config.DodgeballConfig;
+import com.joeyexecutive.dodgeball.game.GameListeners;
 import com.joeyexecutive.dodgeball.util.BukkitTasks;
 import com.joeyexecutive.dodgeball.util.GsonHelper;
 import lombok.Getter;
 import lombok.SneakyThrows;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.nio.file.Files;
 
+/**
+ * Main Bukkit plugin class which will handle registering commands, listeners, managers etc
+ */
 @Getter
 public class DodgeballPlugin extends JavaPlugin {
 
@@ -31,6 +36,8 @@ public class DodgeballPlugin extends JavaPlugin {
         BukkitTasks.init(this);
 
         reloadDodgeballConfig();
+
+        registerListeners(new GameListeners());
     }
 
     /**
@@ -53,6 +60,12 @@ public class DodgeballPlugin extends JavaPlugin {
 
         // re-save config in case the structure has changed, this will auto re-format
         Files.writeString(configFile.toPath(), GsonHelper.PRETTY_GSON.toJson(dodgeballConfig));
+    }
+
+    private void registerListeners(Listener... listeners) {
+        for (Listener listener : listeners) {
+            getServer().getPluginManager().registerEvents(listener, this);
+        }
     }
 
 }

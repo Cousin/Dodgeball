@@ -6,6 +6,9 @@ import org.bukkit.Location;
 
 import java.util.List;
 
+/**
+ * Gson config object holding information about a game map
+ */
 @Getter
 @RequiredArgsConstructor
 public class MapConfig {

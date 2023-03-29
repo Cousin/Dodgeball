@@ -21,6 +21,8 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * A MT-Safe scoreboard implementation. All methods are concurrent safe and do not use the Bukkit API
  * at all - everything is sent using raw packets.
+ *
+ * CREDIT TO GitHub @WesJD
  */
 public class MTSafeScoreboard implements Closeable {
 

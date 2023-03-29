@@ -15,6 +15,10 @@ import java.io.IOException;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * An instance of a dodgeball game
+ * With this, you could technically instantiate multiple games on the same Spigot server instance
+ */
 public class DodgeballGame {
 
     private final DodgeballPlugin plugin;
@@ -30,6 +34,9 @@ public class DodgeballGame {
         this.gameId = UUID.randomUUID().toString();
     }
 
+    /**
+     * Loads the world from SlimeWorldManager and returns a CompleteableFuture of the loaded Bukkit world
+     */
     public CompletableFuture<World> loadMap() {
         return CompletableFuture.supplyAsync(() -> {
             SlimeLoader slimeLoader = plugin.getSlimePlugin().getLoader(mapConfig.getSlimeLoader());

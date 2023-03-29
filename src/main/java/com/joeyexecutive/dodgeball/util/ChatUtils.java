@@ -4,6 +4,9 @@ import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
 import net.minecraft.network.chat.IChatBaseComponent;
 import org.bukkit.ChatColor;
 
+/**
+ * Utility class for Minecraft chat related things
+ */
 public class ChatUtils {
 
     public static String colorCode(String message) {
