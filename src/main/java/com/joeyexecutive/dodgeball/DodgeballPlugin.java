@@ -1,19 +1,32 @@
 package com.joeyexecutive.dodgeball;
 
+import com.infernalsuite.aswm.api.SlimePlugin;
 import com.joeyexecutive.dodgeball.config.DodgeballConfig;
 import com.joeyexecutive.dodgeball.util.GsonHelper;
+import lombok.Getter;
 import lombok.SneakyThrows;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.nio.file.Files;
 
+@Getter
 public class DodgeballPlugin extends JavaPlugin {
 
     private DodgeballConfig dodgeballConfig;
 
+    private SlimePlugin slimePlugin;
+
     @Override
     public void onEnable() {
+        slimePlugin = (SlimePlugin) getServer().getPluginManager().getPlugin("SlimeWorldManager");
+
+        if (slimePlugin == null) {
+            getLogger().severe("SlimeWorldManager is not installed on this server!");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
         reloadDodgeballConfig();
     }
 
