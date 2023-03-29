@@ -1,0 +1,5 @@
+main: com.joeyexecutive.dodgeball.DodgeballPlugin
+version: ${git.commit.id.describe-short}
+name: Dodgeball
+api-version: 1.19
+author: Executive
