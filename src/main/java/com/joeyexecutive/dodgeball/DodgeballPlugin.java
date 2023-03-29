@@ -2,6 +2,7 @@ package com.joeyexecutive.dodgeball;
 
 import com.infernalsuite.aswm.api.SlimePlugin;
 import com.joeyexecutive.dodgeball.config.DodgeballConfig;
+import com.joeyexecutive.dodgeball.util.BukkitTasks;
 import com.joeyexecutive.dodgeball.util.GsonHelper;
 import lombok.Getter;
 import lombok.SneakyThrows;
@@ -26,6 +27,8 @@ public class DodgeballPlugin extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
+
+        BukkitTasks.init(this);
 
         reloadDodgeballConfig();
     }
